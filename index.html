@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IPL IN 4K</title>
+  <title>IPL in 4K</title>
   <style>
     body {
       margin: 0;
@@ -23,9 +23,6 @@
       width: 100%;
       height: 100%;
     }
-
-    
-  
   </style>
 </head>
 <body>
@@ -35,7 +32,6 @@
       <source src="https://prod-ent-live-gm.jiocinema.com/hls/live/2100322/uhd_akamai_ctv_avc_hin_ipl_s1_m1240324/master.m3u8" type="application/x-mpegURL" />
     </video>
   </div>
-
   <script src="https://cdn.fluidplayer.com/v3/current/fluidplayer.min.js"></script>
   <script>
     var myFP = fluidPlayer(
@@ -68,6 +64,14 @@
           "adCTATextPosition": ""
         }
       });
+
+    document.addEventListener('fullscreenchange', function(event) {
+      if (document.fullscreenElement) {
+        screen.orientation.lock('landscape');
+      } else {
+        screen.orientation.unlock();
+      }
+    });
   </script>
 </body>
 </html>
