@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cyberpunk Video Player</title>
+  <title>IPL IN 4K</title>
   <style>
     body {
       margin: 0;
@@ -24,29 +24,30 @@
       height: 100%;
     }
 
-    .mxplayer-button {
+    .open-mx-button {
       position: absolute;
-      bottom: 10px;
-      left: 10px;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
       padding: 10px 20px;
-      background-color: #FFA500; /* Orange color */
-      color: #000; /* Black color */
+      background-color: #007bff;
+      color: #fff;
       border: none;
       cursor: pointer;
       font-size: 16px;
       border-radius: 5px;
-      text-decoration: none; /* Remove underline */
+      text-decoration: none;
     }
   </style>
 </head>
 <body>
   <div id="video-container">
     <video id="video-id">
-      <!-- Replace the source with the 4K quality source -->
+      <!-- Replace the source with the streaming video source -->
       <source src="https://prod-ent-live-gm.jiocinema.com/hls/live/2100322/uhd_akamai_ctv_avc_hin_ipl_s1_m1240324/master.m3u8" type="application/x-mpegURL" />
     </video>
-    <a class="mxplayer-button" href="intent://prod-ent-live-gm.jiocinema.com/hls/live/2100322/uhd_akamai_ctv_avc_hin_ipl_s1_m1240324/master.m3u8#Intent;package=com.mxtech.videoplayer.ad;S.title=Video_Title;end">Open in MX Player</a>
   </div>
+  <a class="open-mx-button" href="mxplayer://stream?url=https://prod-ent-live-gm.jiocinema.com/hls/live/2100322/uhd_akamai_ctv_avc_hin_ipl_s1_m1240324/master.m3u8">Play in MX Player</a>
   <script src="https://cdn.fluidplayer.com/v3/current/fluidplayer.min.js"></script>
   <script>
     var myFP = fluidPlayer(
