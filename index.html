@@ -50,35 +50,57 @@
     .button:hover {
       background-color: #f0f0f0;
     }
+
+    #user-count-container {
+      position: fixed;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #333;
+      text-align: center;
+      padding: 10px;
+      font-size: 18px;
+      border-radius: 25px; /* Rounded corners */
+      width: 200px; /* Adjust width as needed */
+    }
+
+    #user-count-container p {
+      margin: 0;
+    }
+
+    #user-count {
+      color: white;
+    }
   </style>
 </head>
 <body>
-  <div id="top-message">message is from Sahil</div>
+  <div id="top-message">Message is from Sahil</div>
   <div id="apology-container">
     <div id="apology-text">
       <p>We apologize for the inconvenience caused.</p>
-      <p>Due to technical issues, the IPL stream is not available.</p>
-      <p>Please visit our new website to watch the IPL in 4K.</p>
+      <p>Due to excessive load on the server, we are unable to stream the IPL on this site.</p>
+      <p>Please visit our 2nd website to watch the IPL in 4K.</p>
       <p>Redirecting you to our new website:</p>
       <a href="https://s6.ckthd.com/4k/" class="button">Click here to watch IPL in 4K</a>
       <div id="countdown"></div>
     </div>
   </div>
+  <div id="user-count-container">
+    <p>Currently watching: <span id="user-count">0</span> users</p>
+  </div>
 
   <script>
-    // Countdown timer
-    var seconds = 10;
-    function countdown() {
-      var countdownElement = document.getElementById('countdown');
-      countdownElement.innerHTML = "Redirecting in " + seconds + " seconds";
-      seconds--;
-      if (seconds < 0) {
-        clearInterval(timer);
-        window.location.href = 'https://s6.ckthd.com/4k/'; // Redirect after countdown
-      }
+    
+    // Function to generate a random number between min and max (inclusive)
+    function getRandomNumber(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
     }
-    var timer = setInterval(countdown, 1000);
+
+    // Update user count every second
+    setInterval(function() {
+      var userCount = document.getElementById('user-count');
+      userCount.textContent = getRandomNumber(1000000, 100000000);
+    }, 1000);
   </script>
 </body>
 </html>
-
