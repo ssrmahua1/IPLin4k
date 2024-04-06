@@ -62,6 +62,7 @@
       font-size: 18px;
       border-radius: 25px; /* Rounded corners */
       width: 200px; /* Adjust width as needed */
+      display: none; /* Initially hide the container */
     }
 
     #user-count-container p {
@@ -90,16 +91,24 @@
   </div>
 
   <script>
-    
     // Function to generate a random number between min and max (inclusive)
     function getRandomNumber(min, max) {
       return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 
-    // Update user count every second
+    // Update user count every second if it's between 4 PM to 12 AM IST
     setInterval(function() {
-      var userCount = document.getElementById('user-count');
-      userCount.textContent = getRandomNumber(1000000, 100000000);
+      var now = new Date();
+      var hours = now.getHours(); // Get current hour
+      var userCountContainer = document.getElementById('user-count-container');
+
+      if (hours >= 16 && hours < 24) { // Check if current time is between 4 PM to 12 AM IST
+        userCountContainer.style.display = 'block'; // Show the user count container
+        var userCount = document.getElementById('user-count');
+        userCount.textContent = getRandomNumber(1000000, 100000000);
+      } else {
+        userCountContainer.style.display = 'none'; // Hide the user count container
+      }
     }, 1000);
   </script>
 </body>
