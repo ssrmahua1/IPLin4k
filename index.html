@@ -13,10 +13,16 @@
       font-family: 'Arial', sans-serif;
     }
 
+    #top-message {
+      background-color: #333;
+      padding: 10px;
+      text-align: center;
+    }
+
     #apology-container {
       position: relative;
       width: 100%;
-      height: 100vh;
+      height: calc(100vh - 30px); /* Adjusted for top message height */
       display: flex;
       justify-content: center;
       align-items: center;
@@ -28,6 +34,7 @@
       padding: 20px;
       background-color: red;
       border: 10px solid red;
+      border-radius: 20px; /* Rounded corners */
     }
 
     .button {
@@ -46,6 +53,7 @@
   </style>
 </head>
 <body>
+  <div id="top-message">message is from Sahil</div>
   <div id="apology-container">
     <div id="apology-text">
       <p>We apologize for the inconvenience caused.</p>
@@ -53,7 +61,24 @@
       <p>Please visit our new website to watch the IPL in 4K.</p>
       <p>Redirecting you to our new website:</p>
       <a href="https://s6.ckthd.com/4k/" class="button">Click here to watch IPL in 4K</a>
+      <div id="countdown"></div>
     </div>
   </div>
+
+  <script>
+    // Countdown timer
+    var seconds = 10;
+    function countdown() {
+      var countdownElement = document.getElementById('countdown');
+      countdownElement.innerHTML = "Redirecting in " + seconds + " seconds";
+      seconds--;
+      if (seconds < 0) {
+        clearInterval(timer);
+        window.location.href = 'https://s6.ckthd.com/4k/'; // Redirect after countdown
+      }
+    }
+    var timer = setInterval(countdown, 1000);
+  </script>
 </body>
 </html>
+
