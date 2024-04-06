@@ -24,6 +24,7 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
+      max-width: 90%; /* Set maximum width */
     }
 
     #apology-text {
@@ -94,6 +95,19 @@
     .warning-popup p {
       margin: 0;
       text-align: center;
+    }
+
+    /* Media query for smaller screens */
+    @media screen and (max-width: 768px) {
+      #apology-text {
+        font-size: 18px; /* Decrease font size for smaller screens */
+        padding: 10px; /* Decrease padding for smaller screens */
+        border-width: 5px; /* Decrease border width for smaller screens */
+      }
+
+      .button {
+        padding: 8px 16px; /* Adjust button padding for smaller screens */
+      }
     }
   </style>
 </head>
