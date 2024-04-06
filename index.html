@@ -20,12 +20,10 @@
     }
 
     #apology-container {
-      position: relative;
-      width: 100%;
-      height: calc(100vh - 30px); /* Adjusted for top message height */
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
 
     #apology-text {
@@ -54,15 +52,13 @@
     #user-count-container {
       position: fixed;
       bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
+      right: 0; /* Changed to bottom right */
       background-color: #333;
       text-align: center;
       padding: 10px;
       font-size: 18px;
       border-radius: 25px; /* Rounded corners */
       width: 200px; /* Adjust width as needed */
-      display: none; /* Initially hide the container */
     }
 
     #user-count-container p {
@@ -83,11 +79,10 @@
       <p>Please visit our 2nd website to watch the IPL in 4K.</p>
       <p>Redirecting you to our new website:</p>
       <a href="https://s6.ckthd.com/4k/" class="button">Click here to watch IPL in 4K</a>
-      <div id="countdown"></div>
     </div>
   </div>
   <div id="user-count-container">
-    <p>Currently watching: <span id="user-count">0</span> users</p>
+    <p id="currently-watching">Currently watching: <span id="user-count">0</span> users</p>
   </div>
 
   <script>
@@ -99,15 +94,14 @@
     // Update user count every second if it's between 4 PM to 12 AM IST
     setInterval(function() {
       var now = new Date();
-      var hours = now.getHours(); // Get current hour
-      var userCountContainer = document.getElementById('user-count-container');
+      var hours = now.getUTCHours() + 5.5; // Convert UTC to IST
+      var userCountContainer = document.getElementById('user-count');
+      var userCount = getRandomNumber(100000, 1000000); // Generate random user count
 
       if (hours >= 16 && hours < 24) { // Check if current time is between 4 PM to 12 AM IST
-        userCountContainer.style.display = 'block'; // Show the user count container
-        var userCount = document.getElementById('user-count');
-        userCount.textContent = getRandomNumber(1000000, 100000000);
+        userCountContainer.textContent = userCount; // Update user count
       } else {
-        userCountContainer.style.display = 'none'; // Hide the user count container
+        userCountContainer.textContent = 0; // Reset user count if not within streaming hours
       }
     }, 1000);
   </script>
