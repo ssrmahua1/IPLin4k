@@ -77,9 +77,31 @@
       text-align: center;
       display: none; /* Initially hide the "Please wait for IPL Stream" message */
     }
+
+    .warning-popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(0, 0, 0, 0.7);
+      color: white;
+      padding: 20px;
+      border-radius: 10px;
+      z-index: 9999;
+      display: none;
+    }
+
+    .warning-popup p {
+      margin: 0;
+      text-align: center;
+    }
   </style>
 </head>
-<body>
+<body oncontextmenu="return false;"> <!-- Disables right-click -->
+  <div class="warning-popup" id="warning-popup">
+    <p>Right-click is disabled on this page.</p>
+  </div>
+
   <div id="top-message">Message is from Sahil</div>
   <div id="apology-container">
     <div id="apology-text">
@@ -139,6 +161,16 @@
         showWaitForStreamMessage();
       }
     }, 1000);
+
+    // Show warning popup for right-click
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+      var warningPopup = document.getElementById('warning-popup');
+      warningPopup.style.display = 'block';
+      setTimeout(function() {
+        warningPopup.style.display = 'none';
+      }, 2000); // Hide the popup after 2 seconds
+    });
   </script>
 </body>
 </html>
