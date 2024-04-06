@@ -52,7 +52,7 @@
     #user-count-container {
       position: fixed;
       bottom: 0;
-      right: 0; /* Changed to bottom right */
+      right: 0; /* Bottom right corner */
       background-color: #333;
       text-align: center;
       padding: 10px;
@@ -67,6 +67,15 @@
 
     #user-count {
       color: white;
+    }
+
+    #wait-for-stream {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      display: none; /* Initially hide the "Please wait for IPL Stream" message */
     }
   </style>
 </head>
@@ -84,6 +93,9 @@
   <div id="user-count-container">
     <p id="currently-watching">Currently watching: <span id="user-count">0</span> users</p>
   </div>
+  <div id="wait-for-stream">
+    <p>Please wait for IPL Stream</p>
+  </div>
 
   <script>
     // Function to generate a random number between min and max (inclusive)
@@ -91,17 +103,40 @@
       return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 
-    // Update user count every second if it's between 4 PM to 12 AM IST
+    // Function to update user count
+    function updateUserCount() {
+      var userCountContainer = document.getElementById('user-count');
+      var userCount = getRandomNumber(300000, 1000000); // Generate random user count between 300,000 and 1,000,000
+      userCountContainer.textContent = userCount; // Update user count
+    }
+
+    // Function to show apology message
+    function showApologyMessage() {
+      document.getElementById('apology-container').style.display = 'block';
+      document.getElementById('user-count-container').style.display = 'block';
+      document.getElementById('wait-for-stream').style.display = 'none'; // Hide "Please wait for IPL Stream" message
+      updateUserCount();
+    }
+
+    // Function to hide apology message and display "Please wait for IPL Stream" message
+    function showWaitForStreamMessage() {
+      document.getElementById('apology-container').style.display = 'none';
+      document.getElementById('user-count-container').style.display = 'none';
+      document.getElementById('wait-for-stream').style.display = 'block'; // Show "Please wait for IPL Stream" message
+    }
+
+    // Update user count every second if it's within the specified apology display hours
     setInterval(function() {
       var now = new Date();
-      var hours = now.getUTCHours() + 5.5; // Convert UTC to IST
-      var userCountContainer = document.getElementById('user-count');
-      var userCount = getRandomNumber(100000, 1000000); // Generate random user count
+      var day = now.getDay(); // 0 for Sunday, 1 for Monday, and so on
+      var hours = now.getHours();
 
-      if (hours >= 16 && hours < 24) { // Check if current time is between 4 PM to 12 AM IST
-        userCountContainer.textContent = userCount; // Update user count
+      if ((day === 0 && hours >= 15 && hours < 24) || (day >= 1 && day <= 6 && hours >= 19 && hours < 24)) {
+        // Display apology message
+        showApologyMessage();
       } else {
-        userCountContainer.textContent = 0; // Reset user count if not within streaming hours
+        // Display "Please wait for IPL Stream" message
+        showWaitForStreamMessage();
       }
     }, 1000);
   </script>
