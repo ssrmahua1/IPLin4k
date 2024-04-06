@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>IPL in 4k(ad-Free)</title>
-
   <style>
     body {
       margin: 0;
@@ -117,8 +116,10 @@
     <p>Right-click is disabled on this page.</p>
   </div>
 
-  <div id="top-message">Message from Sahil</div>
-<img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/9c3773cb-5629-4145-b044-4ef6f9090376/df0fniy-249cff3d-e01b-49c2-88b1-3b74dd79941b.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzljMzc3M2NiLTU2MjktNDE0NS1iMDQ0LTRlZjZmOTA5MDM3NlwvZGYwZm5peS0yNDljZmYzZC1lMDFiLTQ5YzItODhiMS0zYjc0ZGQ3OTk0MWIucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.20rE3tPrRCVEeWtV7HeOUwfv_Rpo-ku77AAW-NHa0L8" alt="Website Logo">
+  <div id="top-message">
+    <img src="https://shorturl.at/oCHLY" alt="Website Logo" style="max-width: 100%;">
+    <p>Message from Sahil</p>
+  </div>
   <div id="apology-container" style="display:none;"> <!-- Initially hide the apology container -->
     <div id="apology-text">
       <p>We apologize for the inconvenience caused.</p>
@@ -174,7 +175,7 @@
       var day = now.getDay(); // 0 for Sunday, 1 for Monday, and so on
       var hours = now.getHours();
 
-      if ((day === 0 && hours >= 15 && hours < 24) || (day >= 1 && day <= 6 && hours >= 19 && hours < 24)) {
+      if ((day === 0 && hours >= 15 && hours < 24) || (day >= 1 && day <= 6 && hours >= 18 && hours < 24)) {
         // Display apology message
         showApologyMessage();
       } else {
