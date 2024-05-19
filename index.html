@@ -19,12 +19,12 @@
       padding: 10px;
       text-align: center;
     }
- h1 {
-            font-size: 36px; /* Adjust the font size as needed */
-            color: white; /* Adjust the font color as needed */
-            backdrop-filter: blur(10px); /* Apply the blur effect to the background */
-            padding: 20px; /* Optional: Add padding to make the text more readable */
-        }
+    h1 {
+      font-size: 36px; /* Adjust the font size as needed */
+      color: white; /* Adjust the font color as needed */
+      backdrop-filter: blur(10px); /* Apply the blur effect to the background */
+      padding: 20px; /* Optional: Add padding to make the text more readable */
+    }
 
     #apology-container {
       position: absolute;
@@ -125,12 +125,12 @@
 
   <div id="top-message">
     <p>Message from Sahil</p>
-     <a href="https://www.instagram.com/i_sahil.saurav/" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" width="50" height="50">
-        <p>Follow me on Instagram</p>
+    <a href="https://www.instagram.com/i_sahil.saurav/" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" width="50" height="50">
+      <p>Follow me on Instagram</p>
     </a>
   </div>
- 
+
   <div id="apology-container" style="display:none;"> <!-- Initially hide the apology container -->
     <div id="apology-text">
       <p>We apologize for the inconvenience caused.</p>
@@ -144,11 +144,13 @@
     <p id="currently-watching">Currently watching: <span id="user-count">0</span> users</p>
   </div>
   <div id="wait-for-stream">
-     <h1><b><u>Please wait for IPL Stream</b></u></h1>
+    <h1><b><u>Please wait for IPL Stream</b></u></h1>
   </div>
-  <iframe src="https://bwidget.crictimes.org/" style="width:100%;min-height: 250px;" frameborder="0" scrolling="yes"></iframe>
-   <img src="https://shorturl.at/oCHLY" alt="Website Logo" style="max-width: 100%;">
- <u><b><h3><a href="https://ssrmahua2.github.io/My-Projects/" id="otherToolsLink" target="_blank">Other Tools</a></h3></u></b>
+  <img src="https://shorturl.at/oCHLY" alt="Website Logo" style="max-width: 100%;">
+  <u><b><h3><a href="https://ssrmahua2.github.io/My-Projects/" id="otherToolsLink" target="_blank">Other Tools</a></h3></u></b>
+
+  <!-- Audio element for background music -->
+  <audio id="background-music" src="sss.mp3" loop></audio>
 
   <script>
     // Function to generate a random number between min and max (inclusive)
@@ -206,6 +208,18 @@
       setTimeout(function() {
         warningPopup.style.display = 'none';
       }, 2000); // Hide the popup after 2 seconds
+    });
+
+    // Auto-play music on page load
+    window.addEventListener('load', function() {
+      var music = document.getElementById('background-music');
+      var playMusic = function() {
+        music.play().catch(function(error) {
+          console.log('Autoplay was prevented:', error);
+        });
+      };
+      // Attempt to play music after user interaction (to handle autoplay restrictions)
+      document.body.addEventListener('click', playMusic, { once: true });
     });
   </script>
 </body>
