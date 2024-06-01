@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IPL in 4k(ad-Free)</title>
+  <title>IPL in 4k (Ad-Free)</title>
   <style>
     body {
       margin: 0;
@@ -19,28 +19,12 @@
       padding: 10px;
       text-align: center;
     }
-    h1 {
-      font-size: 36px; /* Adjust the font size as needed */
-      color: white; /* Adjust the font color as needed */
-      backdrop-filter: blur(10px); /* Apply the blur effect to the background */
-      padding: 20px; /* Optional: Add padding to make the text more readable */
-    }
 
-    #apology-container {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      max-width: 90%; /* Set maximum width */
-    }
-
-    #apology-text {
+    h1, h2, h3 {
       font-size: 24px;
-      text-align: center;
-      padding: 20px;
-      background-color: red;
-      border: 10px solid red;
-      border-radius: 20px; /* Rounded corners */
+      color: white;
+      backdrop-filter: blur(10px);
+      padding: 10px;
     }
 
     .button {
@@ -60,13 +44,13 @@
     #user-count-container {
       position: fixed;
       bottom: 0;
-      right: 0; /* Bottom right corner */
+      right: 0;
       background-color: #333;
       text-align: center;
       padding: 10px;
       font-size: 18px;
-      border-radius: 25px; /* Rounded corners */
-      width: 200px; /* Adjust width as needed */
+      border-radius: 25px;
+      width: 200px;
     }
 
     #user-count-container p {
@@ -75,15 +59,6 @@
 
     #user-count {
       color: white;
-    }
-
-    #wait-for-stream {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-      display: none; /* Initially hide the "Please wait for IPL Stream" message */
     }
 
     .warning-popup {
@@ -104,21 +79,59 @@
       text-align: center;
     }
 
-    /* Media query for smaller screens */
+    #apology-container {
+      border: 2px solid red;
+      padding: 10px;
+    }
+
+    .red-box {
+      background-color: red;
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+      margin: 10px 0;
+      text-align: center;
+    }
+
+    .india-match {
+      background-color: #ff0;
+      color: black;
+      font-weight: bold;
+    }
+
     @media screen and (max-width: 768px) {
       #apology-text {
-        font-size: 18px; /* Decrease font size for smaller screens */
-        padding: 10px; /* Decrease padding for smaller screens */
-        border-width: 5px; /* Decrease border width for smaller screens */
+        font-size: 18px;
+        padding: 10px;
       }
 
       .button {
-        padding: 8px 16px; /* Adjust button padding for smaller screens */
+        padding: 8px 16px;
       }
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+
+    th, td {
+      border: 1px solid #fff;
+      padding: 10px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #333;
+    }
+
+    .team-row {
+      background-color: #555;
     }
   </style>
 </head>
-<body oncontextmenu="return false;"> <!-- Disables right-click -->
+<body oncontextmenu="return false;">
   <div class="warning-popup" id="warning-popup">
     <p>Right-click is disabled on this page.</p>
   </div>
@@ -131,86 +144,209 @@
     </a>
   </div>
 
-  <div id="apology-container" style="display:none;"> <!-- Initially hide the apology container -->
-    <div id="apology-text">
-      <p>We apologize for the inconvenience caused.</p>
-      <p>Due to excessive load on the server, we are unable to stream the IPL on this site.</p>
-      <p>Please visit our 2nd website to watch the IPL in 4K(ad-Free).</p>
-      <p>Redirecting you to our new website:</p>
-      <a href="https://s6.ckthd.com/4k/" class="button">Click here to watch IPL in 4K</a>
+  <div id="apology-container">
+    <div class="red-box">
+      <h1>The Current Season of IPL-17 (2024) has ended.</h1>
     </div>
-  </div>
-  <div id="user-count-container">
-    <p id="currently-watching">Currently watching: <span id="user-count">0</span> users</p>
-  </div>
-  <div id="wait-for-stream">
-    <h1><b><u>Please wait for IPL Stream</b></u></h1>
-  </div>
-  <img src="https://shorturl.at/oCHLY" alt="Website Logo" style="max-width: 100%;">
-  <u><b><h3><a href="https://ssrmahua2.github.io/My-Projects/" id="otherToolsLink" target="_blank">Other Tools</a></h3></u></b>
+    <div id="apology-text">
+      <h1>Please wait for Streaming <b><u>ICC-T20 World Cup.</u></b></h1>
+      <h2>Here is the Schedule:</h2>
+      <ul>
+        <li class="india-match">5 June 2024: India vs Ireland - New York</li>
+        <li>5 June 2024: Papua New Guinea vs Uganda - Guyana</li>
+        <li>5 June 2024: Australia vs Oman - Barbados</li>
+        <li>6 June 2024: USA vs Pakistan - Dallas</li>
+        <li>6 June 2024: Namibia vs Scotland - Barbados</li>
+        <li>7 June 2024: Canada vs Ireland - New York</li>
+        <li>7 June 2024: New Zealand vs Afghanistan - Guyana</li>
+        <li>7 June 2024: Sri Lanka vs Bangladesh - Dallas</li>
+        <li>8 June 2024: Netherlands vs South Africa - New York</li>
+        <li>8 June 2024: Australia vs England - Barbados</li>
+        <li>8 June 2024: West Indies vs Uganda - Guyana</li>
+        <li class="india-match">9 June 2024: India vs Pakistan - New York</li>
+        <li>9 June 2024: Oman vs Scotland - Antigua</li>
+        <li>10 June 2024: South Africa vs Bangladesh - New York</li>
+        <li>11 June 2024: Pakistan vs Canada - New York</li>
+        <li>11 June 2024: Sri Lanka vs Nepal - Florida</li>
+        <li>11 June 2024: Australia vs Namibia - Antigua</li>
+        <li class="india-match">12 June 2024: USA vs India - New York</li>
+        <li>12 June 2024: West Indies vs New Zealand - Trinidad</li>
+        <li>13 June 2024: England vs Oman - Antigua</li>
+        <li>13 June 2024: Bangladesh vs Netherlands - Saint Vincent</li>
+        <li>13 June 2024: Afghanistan vs Papua New Guinea - Trinidad</li>
+        <li>14 June 2024: USA vs Ireland - Florida</li>
+        <li>14 June 2024: South Africa vs Nepal - Saint Vincent</li>
+        <li>14 June 2024: New Zealand vs Uganda - Trinidad</li>
+        <li class="india-match">15 June 2024: India vs Canada - Florida</li>
+        <li>15 June 2024: Namibia vs England - Antigua</li>
+        <li>15 June 2024: Australia vs Scotland - Saint Lucia</li>
+        <li>16 June 2024: Pakistan vs Ireland - Florida</li>
+        <li>16 June 2024: Bangladesh vs Nepal - Saint Vincent</li>
+        <li>16 June 2024: Sri Lanka vs Netherlands - Saint Lucia</li>
+        <li>17 June 2024: New Zealand vs Papua New Guinea - Trinidad</li>
+        <li>17 June 2024: West Indies vs Afghanistan - Saint Lucia</li>
+        <li>19 June 2024: A2 vs D1 - Antigua</li>
+        <li>19 June 2024: B1 vs C2 - Saint Lucia</li>
+        <li>20 June 2024: C1 vs A1 - Barbados</li>
+        <li>20 June 2024: B2 vs D2 - Antigua</li>
+        <li>21 June 2024: B1 vs D1 - Saint Lucia</li>
+        <li>21 June 2024: A2 vs C2 - Barbados</li>
+        <li>22 June 2024: A1 vs D2 - Antigua</li>
+        <li>22 June 2024: C1 vs B2 - Saint Vincent</li>
+        <li>23 June 2024: A2 vs B1 - Barbados</li>
+        <li>23 June 2024: C2 vs D1 - Antigua</li>
+        <li>24 June 2024: B2 vs A1 - Saint Lucia</li>
+        <li>24 June 2024: C1 vs D2 - Saint Vincent</li>
+        <li>26 June 2024: Semi-final 1 - Guyana</li>
+        <li>27 June 2024: Semi-final 2 - Trinidad</li>
+        <li>29 June 2024: Final - Barbados</li>
+      </ul>
 
-  <!-- Audio element for background music -->
+      <h2>ICC T20 World Cup 2024 Groups:</h2>
+      <h3>ग्रुप A की टीमें:</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>क्रम संख्या</th>
+            <th>टीम</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>भारत</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>पाकिस्तान</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>आयरलैंड</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>कनाडा</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>यूएसए</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>ग्रुप B की टीमें:</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>क्रम संख्या</th>
+            <th>टीम</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>इंग्लैंड</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>ऑस्ट्रेलिया</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>नामीबिया</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>स्कॉटलैंड</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>ओमान</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>ग्रुप C की टीमें:</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>क्रम संख्या</th>
+            <th>टीम</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>न्यूजीलैंड</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>वेस्टइंडीज</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>अफगानिस्तान</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>युगांडा</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>पापुआ न्यू गिनी</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>ग्रुप D की टीमें:</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>क्रम संख्या</th>
+            <th>टीम</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>दक्षिण अफ्रीका</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>श्रीलंका</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>बांग्लादेश</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>नीदरलैंड</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>नेपाल</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <u><b><h3><a href="https://ssrmahua2.github.io/My-Projects/" id="otherToolsLink" target="_blank">Other Tools</a></h3></u></b>
+  </div>
+
   <audio id="background-music" src="sss.mp3" loop></audio>
 
   <script>
-    // Function to generate a random number between min and max (inclusive)
     function getRandomNumber(min, max) {
       return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 
-    // Function to update user count
     function updateUserCount() {
       var userCountContainer = document.getElementById('user-count');
-      var userCount = getRandomNumber(300000, 1000000); // Generate random user count between 300,000 and 1,000,000
-      userCountContainer.textContent = userCount; // Update user count
+      var userCount = getRandomNumber(300000, 1000000);
+      userCountContainer.textContent = userCount;
     }
 
-    // Function to show apology message
-    function showApologyMessage() {
-      document.getElementById('apology-container').style.display = 'block';
-      document.getElementById('user-count-container').style.display = 'block';
-      document.getElementById('wait-for-stream').style.display = 'none'; // Hide "Please wait for IPL Stream" message
-      updateUserCount();
-    }
-
-    // Function to hide apology message and display "Please wait for IPL Stream" message
-    function showWaitForStreamMessage() {
-      document.getElementById('apology-container').style.display = 'none';
-      document.getElementById('user-count-container').style.display = 'none';
-      document.getElementById('wait-for-stream').style.display = 'block'; // Show "Please wait for IPL Stream" message
-    }
-
-    // Delay the display of the apology message by 3 seconds
-    setTimeout(function() {
-      showApologyMessage();
-    }, 3000);
-
-    // Update user count every second if it's within the specified apology display hours
-    setInterval(function() {
-      var now = new Date();
-      var day = now.getDay(); // 0 for Sunday, 1 for Monday, and so on
-      var hours = now.getHours();
-
-      if ((day === 0 && hours >= 15 && hours < 23) || (day >= 1 && day <= 6 && hours >= 19 && hours < 23)) {
-        // Display apology message
-        showApologyMessage();
-      } else {
-        // Display "Please wait for IPL Stream" message
-        showWaitForStreamMessage();
-      }
-    }, 1000);
-
-    // Show warning popup for right-click
-    document.addEventListener('contextmenu', function(e) {
-      e.preventDefault();
-      var warningPopup = document.getElementById('warning-popup');
-      warningPopup.style.display = 'block';
-      setTimeout(function() {
-        warningPopup.style.display = 'none';
-      }, 2000); // Hide the popup after 2 seconds
-    });
-
-    // Auto-play music on page load
     window.addEventListener('load', function() {
       var music = document.getElementById('background-music');
       var playMusic = function() {
@@ -218,7 +354,6 @@
           console.log('Autoplay was prevented:', error);
         });
       };
-      // Attempt to play music after user interaction (to handle autoplay restrictions)
       document.body.addEventListener('click', playMusic, { once: true });
     });
   </script>
